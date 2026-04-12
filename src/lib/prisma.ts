@@ -16,10 +16,7 @@ function createPrismaClient(): PrismaClient {
     // See: https://supabase.com/docs/guides/database/connecting-to-postgres#connecting-with-drizzle
   });
 
-  const adapter = new PrismaPg(pool, {
-    // Disable prepared statements for PgBouncer compatibility
-    disableQuoting: false,
-  });
+  const adapter = new PrismaPg(pool);
 
   return new PrismaClient({
     adapter,
