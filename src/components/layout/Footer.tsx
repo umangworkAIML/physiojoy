@@ -1,6 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
-  Stethoscope,
   Mail,
   Phone,
   MapPin,
@@ -40,16 +40,20 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-primary-light flex items-center justify-center">
-                <Stethoscope className="w-5 h-5 text-white" />
-              </div>
+              <Image
+                src="/logo.png"
+                alt="PhysioJoy Logo"
+                width={40}
+                height={40}
+                className="rounded-lg"
+              />
               <span className="text-lg font-bold">
                 <span className="text-primary-light">Physio</span>
-                <span className="text-white">Connect</span>
+                <span className="text-white">Joy</span>
               </span>
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-6 max-w-sm">
-              Ahmedabad&apos;s premier physiotherapy platform. Book certified therapists,
+              PhysioJoy by Joyal — Ahmedabad&apos;s premier physiotherapy platform. Book certified therapists,
               discover clinics, and shop premium recovery products — all in one place.
             </p>
             <div className="space-y-2">
@@ -63,7 +67,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2 text-sm text-white/50">
                 <Mail className="w-4 h-4 text-primary-light flex-shrink-0" />
-                <span>hello@physioconnect.in</span>
+                <span>hello@physiojoy.in</span>
               </div>
             </div>
           </div>
@@ -113,7 +117,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="container-custom py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-white/40">
-            © {new Date().getFullYear()} PhysioConnect. All rights reserved.
+            © {new Date().getFullYear()} PhysioJoy by Joyal. All rights reserved.
           </p>
           <p className="text-xs text-white/40 flex items-center gap-1">
             Made with <Heart className="w-3 h-3 text-red-400 fill-red-400" /> by{" "}

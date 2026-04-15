@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { Suspense, useState, useEffect } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
@@ -41,7 +41,7 @@ const categoryColors: Record<string, string> = {
   "EXERCISE_EQUIPMENT": "from-cyan-400 to-blue-500",
 };
 
-export default function ShopPage() {
+function ShopPageContent() {
   const searchParamsHook = useSearchParams();
   const initialCategory = searchParamsHook.get("category") || "";
   const { addItem, totalItems } = useCart();
@@ -257,5 +257,37 @@ export default function ShopPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function ShopPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-background">
+          <div className="bg-gradient-to-r from-amber-50 to-orange-50 border-b border-border/50">
+            <div className="container-custom py-10">
+              <div className="h-10 w-48 skeleton mb-2" />
+              <div className="h-5 w-72 skeleton" />
+            </div>
+          </div>
+          <div className="container-custom py-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+                <div key={i} className="bg-card rounded-2xl border border-border overflow-hidden">
+                  <div className="aspect-square skeleton" />
+                  <div className="p-4 space-y-2">
+                    <div className="h-4 w-32 skeleton" />
+                    <div className="h-5 w-20 skeleton" />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      }
+    >
+      <ShopPageContent />
+    </Suspense>
   );
 }

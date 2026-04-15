@@ -27,10 +27,10 @@ interface Clinic {
   name: string;
   address: string;
   phone: string;
-  email: string | null;
+  email?: string | null;
   latitude: number;
   longitude: number;
-  description: string | null;
+  description?: string | null;
   services: string[];
   rating: number;
   timings: string;

@@ -35,8 +35,10 @@ interface Clinic {
   name: string;
   address: string;
   phone: string;
+  email?: string | null;
   latitude: number;
   longitude: number;
+  description?: string | null;
   rating: number;
   timings: string;
   services: string[];

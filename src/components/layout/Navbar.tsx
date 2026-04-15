@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { useAuth } from "@/context/AuthContext";
 import { useCart } from "@/context/CartContext";
@@ -13,7 +14,6 @@ import {
   LogOut,
   LayoutDashboard,
   Heart,
-  Stethoscope,
 } from "lucide-react";
 
 const navLinks = [
@@ -36,12 +36,16 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 md:h-18">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-primary-light flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-              <Stethoscope className="w-5 h-5 text-white" />
-            </div>
+            <Image
+              src="/logo.png"
+              alt="PhysioJoy Logo"
+              width={40}
+              height={40}
+              className="rounded-lg group-hover:scale-105 transition-transform"
+            />
             <span className="text-lg font-bold tracking-tight">
               <span className="text-primary">Physio</span>
-              <span className="text-foreground">Connect</span>
+              <span className="text-foreground">Joy</span>
             </span>
           </Link>
 

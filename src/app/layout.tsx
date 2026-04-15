@@ -17,9 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PhysioConnect Ahmedabad — Book Physiotherapists, Clinics & More",
+  title: "PhysioJoy by Joyal — Book Physiotherapists, Clinics & More",
   description:
-    "Ahmedabad's premier physiotherapy platform. Book certified physiotherapists for home visits, discover nearby clinics, get online consultations, and shop premium recovery products.",
+    "PhysioJoy by Joyal — Ahmedabad's premier physiotherapy platform. Book certified physiotherapists for home visits, discover nearby clinics, get online consultations, and shop premium recovery products.",
   keywords: [
     "physiotherapy",
     "Ahmedabad",
