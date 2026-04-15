@@ -15,6 +15,6 @@ export default defineConfig({
     // Use DIRECT_URL for CLI commands (migrate, db push, studio).
     // Falls back to DATABASE_URL if DIRECT_URL is not set.
     // DIRECT_URL bypasses PgBouncer so prepared statements work.
-    url: process.env.DIRECT_URL || env("DATABASE_URL"),
+    url: process.env.DIRECT_URL || process.env.DATABASE_URL || "postgresql://dummy:dummy@dummy/dummy",
   },
 });
